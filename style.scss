@@ -6,7 +6,13 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background_dark_theme);
+  --background_dark_theme: #242424;
+  --background_light_theme: beige;
+  --dark_theme_button_background: white;
+  --dark_theme_button_color: #383737;
+  --light_theme_button_background: #428155;
+  --toggle_button_background: rgb(58, 61, 60);
 }
 
 .start {
@@ -24,9 +30,11 @@
       border-radius: 50%;
       font-size: 3rem;
       font-weight: 600;
+      background-color: var(--dark_theme_button_background);
+      color: var(--dark_theme_button_color);
 
       &:hover {
-        background-color: #afacac;
+        filter: brightness(85%);
         cursor: pointer;
         color: darken(#383737, 30%);
       }
@@ -40,23 +48,28 @@
     align-items: center;
     padding: 0 10px;
     &__toggle-button {
-      background-color: rgb(58, 61, 60);
+      background-color: var(--toggle_button_background);
       color: rgb(215, 215, 220);
       height: 60px;
       border-radius: 15px;
+      &:hover {
+        filter: brightness(85%);
+
+      }
     }
   }
 
   .light-theme {
-    background-color: beige;
+    background-color: var(--background_light_theme);
     color: black;
     .start {
       &__button {
-        background-color: #428155;
+        background-color: var(--light_theme_button_background);
         color: azure;
         &:hover {
-          background-color: darken(#428155, 10%);
-          color: lighten(azure, 30%);
+          filter: brightness(85%);
+          // background-color: darken(#428155, 10%);
+          
         }
       }
     }
